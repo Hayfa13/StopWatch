@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar/dist/simplebar.min.css" />
+    <script src="https://unpkg.com/simplebar/dist/simplebar.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Stop Watch</h1>
+        <div class="watch" id="watch">
+            <div class="time" id="timeDisplay">00:00:00</div>
+            <div class="control">
+                <button id="Start" style="display: inline-block;">Start</button>
+                <button id="Stop" style="display: none;">Stop</button>
+                <button id="Reset" style="display: inline-block;">Reset</button>
+                <button id="Lap" style="display: none;">Lap</button>        
+            </div>
+            <div id="LapList" data-simplebar>
+            <ul id="lapList"></ul>
+        </div>
+        </div>
+
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="toggleSwitch">
+                <span class="slider round"></span>
+            </label>
+            <span class="toggle-label">Dark Mode</span>
+        </div>
+    </div>
+    <script src="javascript.js"></script>
+</body>
+</html>

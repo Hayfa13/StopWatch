@@ -1,0 +1,230 @@
+:root {
+    --primary: #03C988;
+    --secondary: #797EF6;
+    --background-light: #bee5f4;
+    --background-dark: #1a7599;
+    --text-light: #ffffff;
+    --text-dark: #4ADEDE;
+}
+
+body {
+    margin: 0;
+    font-family: 'Georgia', 'Serif';
+    background-color: var(--background-light);
+    color: navy;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top:150px ;  
+    color: var(--primary);
+    font-size: 2.5rem;
+    font-weight: 550;
+}
+
+.watch {
+    background-color: var(--background-dark);
+    width: 100%;
+    max-width: 360px;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.time {
+    font-size: 5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    transition: color 0.3s;
+    transition: color 0.3s, font-size 0.3s;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+button {
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+    color: var(--text-light);
+    font-size: 1.125rem;
+    background-color: var(--primary);
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: var(--secondary);
+    background-color: var(--secondary);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.watch:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: scale(1.02); 
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+button:active {
+    background-color: var(--background-dark);
+    transform: scale(0.95);
+}
+
+.toggle-container {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.5s;
+
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color:  #647382;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.dark-mode {
+    background-color: var(--background-dark);
+    color: white;
+}
+
+.toggle-label{
+    padding-left: 5px;
+    font-weight: 3px;
+}
+
+#lapList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem;
+    overflow-y: auto;
+    max-height: 100px;
+}
+
+li {
+    background-color: var(--background-light);
+    border: 1px solid var(--primary);
+    margin-right: 5px;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0; 
+    transform: translateY(-20px); 
+    transition: opacity 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+}
+li.added {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+li.remove {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+li span {
+    font-weight: bold;
+}
+
+li button {
+    background-color: var(--secondary);
+    color: var(--text-light);
+    border: none;
+    padding: 0.25rem 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 0.8rem; 
+}
+
+li:hover {
+    background-color:    #7ccae9;
+    transform: scale(1.02);
+}
+
+li button:hover {
+    background-color:   #585df3;
+    transform: scale(1.2);
+}
+
+li button.remove-button {
+    font-size: 0.7rem; 
+    padding: 0.2rem 0.4rem; 
+}
+
+#lapList::-webkit-scrollbar {
+    width: 10px; 
+}
+
+#lapList::-webkit-scrollbar-thumb {
+        background-color: #568e8f;
+        border-radius: 5px; 
+    
+}
+
+  
