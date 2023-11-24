@@ -1,5 +1,7 @@
 # Stopwatch App
 
+https://hayfa13.github.io/StopWatch/
+
 ## Overview
 This is a simple stopwatch web application built using HTML, CSS, and JavaScript. The app allows users to start, stop, reset the stopwatch, and record laps. It also features a dark mode toggle for user preference.
 
